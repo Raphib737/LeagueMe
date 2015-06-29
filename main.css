@@ -6,7 +6,7 @@ html{
   background-size: cover;*/
 }
 body{
-background: url(./pics/wallpaper.jpg) no-repeat center center fixed; 
+background: black url("wallpaper.jpg") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

@@ -48,30 +48,29 @@ $("input").on("keydown",function search(e) {
 
         loadXMLDoc("GET",url,function(data){
             summInfo = JSON.parse(data);
-        });
 
-        url = "https://".concat(region,".api.pvp.net/api/lol/",region,"/v2.2/matchhistory/",summInfo[sumName]['id'],"?rankedQueues=RANKED_SOLO_5x5&api_key=",key);
-        loadXMLDoc("GET",url,function(data){
-             matchHist = JSON.parse(data);
-        });
+            url = "https://".concat(region,".api.pvp.net/api/lol/",region,"/v2.2/matchhistory/",summInfo[sumName]['id'],"?rankedQueues=RANKED_SOLO_5x5&api_key=",key);
+            loadXMLDoc("GET",url,function(data){
+                 matchHist = JSON.parse(data);
 
-        var matchids = []
-        for(x in matchHist['matches']){
-            matchids.push(matchHist['matches'][x]['matchId']);
-        }
-        
-        console.log(matchids);
-        for(x in matchids){
-          https://na.api.pvp.net/api/lol/na/v2.2/match/1836707013?api_key=02164b8f-10a9-4785-857f-61a070a7360f
-          url = "https://".concat(region,'.api.pvp.net/api/lol/',region,'/v2.2/match/',matchids[x],"?api_key=",key);
-          loadXMLDoc("GET",url,function(data){
-            matchData = (data);
-          });
+                 var matchids = []
+                 for(x in matchHist['matches']){
+                    matchids.push(matchHist['matches'][x]['matchId']);
+                 }
+                
+                 console.log(matchids);
+                 for(x in matchids){
+                  https://na.api.pvp.net/api/lol/na/v2.2/match/1836707013?api_key=02164b8f-10a9-4785-857f-61a070a7360f
+                  url = "https://".concat(region,'.api.pvp.net/api/lol/',region,'/v2.2/match/',matchids[x],"?api_key=",key);
+                  loadXMLDoc("GET",url,function(data){
 
-          console.log(matchData);
+                    matchData = JSON.parse(data);
+              });
+            }                
+            });
 
-            
-        }
+
+        )} ;
     }
 
 });

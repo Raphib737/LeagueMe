@@ -6,7 +6,7 @@ html{
   background-size: cover;*/
 }
 body{
-background: black url("wallpaper.jpg") no-repeat center center fixed; 
+background: url("./wallpaper.jpg") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -32,8 +32,8 @@ background: black url("wallpaper.jpg") no-repeat center center fixed;
 }
 .drploc{
     width: 100%;
-    margin-left: auto !important;
-    margin-right: auto !important;
+    margin-left: auto ;
+    margin-right: auto ;
     color: white;
 }
 

@@ -53,9 +53,10 @@ $("input").on("keydown",function search(e) {
             loadXMLDoc("GET",url,function(data){
                 matchHist = JSON.parse(data);
 
-                var matchids = []
-                for(x in matchHist['matches']){
-                  matchids.push(matchHist['matches'][x]['matchId']);
+                var matchids = [];
+                console.log(matchHist,matchHist['matches'].length);
+                for(var y = 0; y < matchHist['matches'].length - 2; y++){
+                  matchids.push(matchHist['matches'][y]['matchId']);
                 } //FOR LOOP 
                 
                 console.log(matchids);
